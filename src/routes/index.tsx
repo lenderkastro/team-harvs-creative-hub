@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, LockKeyhole, Menu } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import heroImage from "@/assets/team-harvs-editorial-hero.jpg";
 import collaborationImage from "@/assets/team-harvs-collaboration.jpg";
+import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({

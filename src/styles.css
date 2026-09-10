@@ -177,7 +177,106 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Scroll-triggered reveals (driven by the Reveal component) */
+[data-reveal] {
+  transition:
+    opacity 900ms cubic-bezier(.2,.7,.2,1),
+    transform 900ms cubic-bezier(.2,.7,.2,1),
+    clip-path 1100ms cubic-bezier(.2,.7,.2,1),
+    filter 900ms ease;
+  will-change: opacity, transform;
+}
+
+[data-reveal="up"][data-shown="false"] { opacity: 0; transform: translateY(38px); }
+[data-reveal="fade"][data-shown="false"] { opacity: 0; filter: blur(6px); }
+[data-reveal="left"][data-shown="false"] { opacity: 0; transform: translateX(-42px); }
+[data-reveal="scale"][data-shown="false"] { opacity: 0; transform: scale(1.06); }
+[data-reveal="mask"] { clip-path: inset(0 0 0 0); }
+[data-reveal="mask"][data-shown="false"] {
+  opacity: 0;
+  clip-path: inset(0 0 110% 0);
+  transform: translateY(18px);
+}
+[data-reveal][data-shown="true"] {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  clip-path: inset(0 0 0 0);
+}
+
+/* Hero entrance */
+@utility hero-zoom {
+  animation: hero-zoom 2400ms cubic-bezier(.16,.84,.28,1) both;
+}
+@keyframes hero-zoom {
+  from { transform: scale(1.14); filter: brightness(0.75); }
+  to { transform: scale(1); filter: brightness(1); }
+}
+
+@utility rise-in {
+  animation: rise-in 1100ms cubic-bezier(.2,.75,.2,1) both;
+}
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(120%) rotate(2deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+@utility line-grow {
+  animation: line-grow 1200ms cubic-bezier(.2,.7,.2,1) both;
+  transform-origin: left;
+}
+@keyframes line-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@utility float-soft {
+  animation: float-soft 5s ease-in-out infinite;
+}
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@utility marquee-track {
+  animation: marquee 32s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility spin-slow {
+  animation: spin 18s linear infinite;
+}
+
+/* Animated underline for nav links */
+@utility nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 400ms cubic-bezier(.2,.7,.2,1);
+}
+.nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal-up { animation: none; }
+  .reveal-up,
+  .hero-zoom,
+  .rise-in,
+  .line-grow,
+  .float-soft,
+  .marquee-track,
+  .spin-slow { animation: none !important; }
+  [data-reveal] { transition: none !important; opacity: 1 !important; transform: none !important; clip-path: none !important; filter: none !important; }
 }
+

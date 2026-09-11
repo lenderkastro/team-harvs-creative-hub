@@ -88,7 +88,7 @@ function Index() {
         )}
       </header>
 
-      <section id="top" className="relative flex min-h-[92svh] items-end overflow-hidden bg-wine-deep text-cream">
+      <section id="top" className="relative flex min-h-[92svh] items-start overflow-hidden bg-wine-deep text-cream">
         <img
           src={heroImage}
           alt="A fashion model, stylist, photographer and makeup artist creating together"
@@ -99,19 +99,13 @@ function Index() {
           style={{ transform: `translate3d(0, ${scrollY * 0.18}px, 0)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wine-deep via-wine-deep/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-wine-deep/70 via-transparent to-wine-deep/20" />
-        <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 pb-10 pt-32 md:px-10 md:pb-14 lg:px-16">
-          <p className="reveal-up mb-5 text-xs font-semibold uppercase tracking-[0.22em]" style={{ animationDelay: "180ms" }}>Creative collective · Uyo, Nigeria</p>
-          <h1 className="max-w-4xl font-display text-[clamp(5.2rem,13vw,12rem)] font-medium leading-[0.68]">
-            <span className="block overflow-hidden">
-              <span className="rise-in block" style={{ animationDelay: "260ms" }}>Team</span>
-            </span>
-            <span className="block overflow-hidden">
-              <span className="rise-in block italic" style={{ animationDelay: "420ms" }}>Harvs</span>
-            </span>
-          </h1>
-          <div className="mt-10 flex max-w-2xl flex-col gap-7 md:ml-[34%] md:mt-6 md:flex-row md:items-end md:justify-between">
-            <p className="reveal-up max-w-md text-sm leading-6 text-cream/85 md:text-base md:leading-7" style={{ animationDelay: "700ms" }}>A space for emerging creatives to collaborate, experiment and turn considered ideas into meaningful visual work.</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-wine-deep/70 via-transparent to-wine-deep/40" />
+        <div className="relative z-10 mx-auto w-full max-w-[1600px] px-5 pb-10 pt-32 md:px-10 md:pt-40 lg:px-16">
+          <p className="reveal-up font-display text-3xl font-medium leading-tight md:text-5xl lg:text-6xl" style={{ animationDelay: "180ms" }}>
+            Creative collective <span className="text-cream/55">·</span> Uyo, Nigeria
+          </p>
+          <div className="mt-8 flex max-w-2xl flex-col gap-7 md:flex-row md:items-end md:justify-between">
+            <p className="reveal-up max-w-md text-sm leading-6 text-cream/85 md:text-base md:leading-7" style={{ animationDelay: "420ms" }}>A space for emerging creatives to collaborate, experiment and turn considered ideas into meaningful visual work.</p>
             <a href="#about" className="float-soft flex size-12 shrink-0 items-center justify-center rounded-full border border-cream/60 transition-colors duration-300 hover:bg-cream hover:text-wine" aria-label="Discover Team Harvs"><ArrowDown /></a>
           </div>
         </div>

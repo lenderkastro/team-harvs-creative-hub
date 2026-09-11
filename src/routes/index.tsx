@@ -52,10 +52,9 @@ function Index() {
     <main className="min-h-screen bg-background text-foreground">
       <header className="absolute inset-x-0 top-0 z-20 border-b border-cream/30 text-cream">
         <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-5 md:px-10 lg:px-16">
-          <a href="#top" aria-label="Team Harvs home" className="group flex items-center gap-3">
-            <span className="flex size-10 items-center justify-center rounded-full border border-current font-display text-lg font-semibold transition-transform duration-500 group-hover:rotate-[360deg]">TH</span>
-            <span className="text-sm font-semibold uppercase tracking-[0.18em]">Team Harvs</span>
-          </a>
+           <a href="#top" aria-label="Team Harvs home" className="group flex items-center gap-3">
+             <span className="font-display text-lg font-medium tracking-[0.04em] transition-transform duration-500 group-hover:rotate-[360deg]">Team Harvs</span>
+           </a>
           <nav aria-label="Main navigation" className="hidden items-center gap-10 text-xs font-medium uppercase tracking-[0.15em] md:flex">
             <a className="nav-link" href="#about">About</a>
             <a className="nav-link" href="#practice">Practice</a>
